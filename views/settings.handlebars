@@ -1,0 +1,57 @@
+<h2 class="page-header">Settings</h2>
+{{#if error}}
+  {{#each error}}
+    <div class="alert alert-danger">{{msg}}</div>
+  {{/each}}
+
+{{/if}}
+ <div>
+	<form method="post" action="/users/settings">  
+    <fieldset>
+      <input type="hidden" name="username" value="{{userid}}">
+
+      <div class="control-group">
+        <!-- Password-->
+        <label class="control-label" for="name">User Name</label>
+        <div class="controls">
+          <input type="text" id="name" name="name" placeholder="User Name" value="{{username}}" class="form-control">
+        </div>
+      </div>
+      <div class="control-group">
+        <!-- Password-->
+        <label class="control-label" for="email">Email</label>
+        <div class="controls">
+          <input type="text" id="email" name="email" placeholder="Email" value="{{email}}" class="form-control">
+        </div>
+      </div>
+      <div class="control-group">
+        <!-- Password-->
+        <label class="control-label" for="password">Old Password</label>
+        <div class="controls">
+          <input type="password" id="oldpassword" name="oldpassword" placeholder="Old Password" class="form-control">
+        </div>
+      </div>
+      <div class="control-group">
+        <!-- Password-->
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+          <input type="password" id="newpassword" name="newpassword" placeholder="New Password" class="form-control">
+        </div>
+      </div>
+      <div class="control-group">
+        <!-- Confirm Password-->
+        <label class="control-label" for="confirmPassword">Confirm Password</label>
+        <div class="controls">
+          <input type="password" id="confirmPassword" placeholder="Confirm Password" name="password_confirm" placeholder="" class="form-control">
+        </div>
+      </div>
+      <br>
+      <div class="control-group">
+        <!-- Button -->
+        <div class="controls">
+          <button class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </fieldset> 
+	</form> 
+ </div>
